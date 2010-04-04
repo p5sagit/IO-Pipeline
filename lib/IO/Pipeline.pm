@@ -191,7 +191,7 @@ the pipe to the output until the input filehandle is exhausted.
 Non-completed pipeline objects are completely re-usable though - so you can
 (and are expected to) do things like:
 
-  my $combined_to_stoud = $combined | \*STDOUT;
+  my $combined_to_stdout = $combined | \*STDOUT;
   
   foreach my $file (@files_to_process) {
   
