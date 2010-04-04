@@ -11,7 +11,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(pmap pgrep psink);
 
-our $VERSION = '0.009001'; # 0.9.1
+our $VERSION = '0.009002'; # 0.9.2
 
 $VERSION = eval $VERSION;
 
@@ -339,7 +339,7 @@ the author so far.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2010 the App::FatPacker L</AUTHOR> and L</CONTRIBUTORS>
+Copyright (c) 2010 the IO::Pipeline L</AUTHOR> and L</CONTRIBUTORS>
 as listed above.
 
 =head1 LICENSE
