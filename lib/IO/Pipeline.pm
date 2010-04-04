@@ -331,7 +331,7 @@ a variable so that we can examine the results:
 
 Matt S. Trout (mst) <mst@shadowcat.co.uk>
 
-=head2 CONTRIBUTORS
+=head1 CONTRIBUTORS
 
 None as yet, though I'm sure that'll change as soon as people spot the
 giant gaping holes that inevitably exist in any software only used by
