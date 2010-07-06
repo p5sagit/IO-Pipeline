@@ -327,15 +327,40 @@ a variable so that we can examine the results:
 
     | psink { $out .= $_ };
 
+=head1 COOL EXAMPLES
+
+=head2 tail colorize
+
+The following example simply colors the lines that match a given regular
+expression.  It watches C<STDIN>, so the typical usage would be
+
+ tail -f foo | perl tail-color.pl
+
+If you are on a Windows system take a look at L<Win32::Console::ANSI> to
+make the colors work and L<tail> for a pure-Perl implementation of tail.
+
+ use IO::Pipeline;
+ use Term::ANSIColor;
+
+ my $reset = color 'reset';
+
+ sub colorize {
+    my ($regex, $color) = @_;
+    pmap { return colored([$color], $_) if $_ =~ $regex; $_ }
+ }
+
+\*STDIN |
+   colorize(qr/^INFO: .*$/, 'blue') |
+   colorize(qr/^HELP: .*$/, 'bright_red on_magenta') |
+\*STDOUT;
+
 =head1 AUTHOR
 
 Matt S. Trout (mst) <mst@shadowcat.co.uk>
 
 =head1 CONTRIBUTORS
 
-None as yet, though I'm sure that'll change as soon as people spot the
-giant gaping holes that inevitably exist in any software only used by
-the author so far.
+frew: Arthr Axel "fREW" Schmidt <frioux@gmail.com>
 
 =head1 COPYRIGHT
 
